@@ -1,0 +1,37 @@
+<odoo noupdate="1">
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">مبيعات خارج الكويت  </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">ماي فاتورة   </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">ecommerce   </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">العاشرة 1   </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">key Account 1   </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">key Account  2   </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+    <record id="normal_sale_tag" model="sale.order.tag">
+        <field name="name">وسط البلد    </field>
+        <field name="company_id" eval="False" />
+        <field name="sequence_id" ref="sale.seq_sale_order" />
+    </record>
+</odoo>

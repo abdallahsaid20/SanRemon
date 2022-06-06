@@ -1,0 +1,15 @@
+<odoo>
+    <record id="res_partner_sale_tag_form_view" model="ir.ui.view">
+        <field name="name">res.partner.sale_tag.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                                <field name="sale_tag" />
+
+            </xpath>
+            <group name="sale" position="inside">
+            </group>
+        </field>
+    </record>
+</odoo>
