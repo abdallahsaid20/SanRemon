@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">partner.over.credit.limit.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_account_position_id']" position="after">
+                <field name="credit_warning" readonly="1"/>
+            </xpath>
+                        <group>
+                <group>
+                    <field name="credit"/>
+                </group>
+                <group>
+                    <field name="debit"/>
+                </group>
+            </group>
+            <xpath expr="//group[@name='container_row_2']" position="inside">
+                <group name="container_row_credit">
+                    <group string="Credit Limit" colspan="2">
+                        <field name="credit_check"/>
+                        <field name="credit_warning" attrs="{'invisible': [('credit_check', '=', False)]}"/>
+                        <field name="credit_blocking" attrs="{'invisible': [('credit_check', '=', False)]}"/>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_partner_form_inherit2" model="ir.ui.view">
+        <field name="name">partner.over.credit.limit.form.inherit2</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="priority">21</field>
+        <field name="inherit_id" ref="customer_credit_management.view_partner_form_inherit"/>
+        <field name="groups_id" eval="[(4,ref('sales_team.group_sale_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='credit_warning']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
